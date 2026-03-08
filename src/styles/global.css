@@ -1,0 +1,257 @@
+:root {
+  --nav-height: 72px;
+  --container-max: 90%;
+  --pad-x: 20px;
+
+  --white: #ffffff;
+  --black: #111827;
+  --muted: rgba(17, 24, 39, 0.72);
+  --shadow: 0 10px 30px rgba(17, 24, 39, 0.12);
+
+  --primary: #0f766e;
+  --primary-hover: #115e59;
+}
+
+@font-face {
+  font-family: 'canela';
+  src: url('/fonts/Canela-Regular-Trial.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat-Regular', sans-serif;
+  color: var(--black);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Navbar */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 50;
+  transition: background-color 180ms ease, box-shadow 180ms ease, color 180ms ease;
+}
+
+.nav--top {
+  background: transparent;
+  color: #ffffff;
+}
+
+.nav--scrolled {
+  background: var(--white);
+  /* background: #152a38; */
+  color: var(--black);
+  box-shadow: var(--shadow);
+}
+
+.nav__inner {
+  max-width: var(--container-max);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav__logo {
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__link {
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.92;
+  transition: opacity 120ms ease;
+}
+
+.nav__link:hover {
+  opacity: 1;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease,
+    color 120ms ease, opacity 120ms ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background: var(--primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn--primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: inherit;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav--scrolled .btn--ghost {
+  border-color: rgba(17, 24, 39, 0.22);
+}
+
+/* Burger (mobile) */
+.nav__burger {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.nav__burgerLine {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.nav__burgerLine + .nav__burgerLine {
+  margin-top: 5px;
+}
+
+@media (max-width: 860px) {
+  .nav__burger {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav__right {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    padding: 14px var(--pad-x) 18px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    background: var(--white);
+    color: var(--black);
+    box-shadow: var(--shadow);
+  }
+
+  .nav__right--open {
+    display: flex;
+  }
+
+  .nav__links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .nav__link {
+    padding: 10px 8px;
+  }
+
+  .nav__actions {
+    justify-content: flex-start;
+  }
+}
+
+/* Simple page sections so navbar anchors have something to scroll to */
+.page {
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 100vh;
+  padding-top: var(--nav-height);
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  background: radial-gradient(1200px 500px at 20% 10%, rgba(15, 118, 110, 0.55), transparent 55%),
+    linear-gradient(135deg, #0b1220 0%, #0f172a 45%, #0b1220 100%);
+}
+
+.hero__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 60px var(--pad-x);
+}
+
+.section {
+  padding: 80px var(--pad-x);
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.section h2 {
+  margin: 0 0 10px;
+}
+
+.section p {
+  margin: 0;
+  color: var(--muted);
+}
+

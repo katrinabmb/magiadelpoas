@@ -1,0 +1,381 @@
+.banner-principal {
+    background-image: url('./images/bannerprincipal.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.banner-overlay {
+    background: linear-gradient(0deg,rgba(255, 255, 255, 0) 0%, rgba(3, 3, 3, 1) 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.banner-content {
+    /* border: 1px solid red; */
+    z-index: 2;
+    width: 70%;
+    padding-left: 5%;
+}
+.banner-title {
+    font-size: 8rem !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    font-family:  "canela", serif !important;
+}
+.banner-subtitle {
+    font-size: 1.5rem !important; 
+    font-weight: 400 !important;
+    color: #fff !important;
+    font-family: 'Montserrat-Regular', sans-serif !important;
+}
+.btnBP-booking{
+    background-color: #1c8077 !important;
+    width: 15% !important;
+    height: 60px !important;
+    color: #fff !important;
+    font-size: 1.2rem !important;
+    font-family: 'Montserrat-Regular', sans-serif !important;
+    border-radius: 0.5rem !important;
+    font-weight: 200 !important;
+    cursor: pointer !important;
+    gap: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-transform: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+    /* Diagonal split hover drawn as background layers so it never covers text */
+    background:
+        linear-gradient(135deg, #ffffff 0 50%, transparent 50% 100%) left top / 0% 0% no-repeat,
+        linear-gradient(315deg, #ffffff 0 50%, transparent 50% 100%) right bottom / 0% 0% no-repeat,
+        #1c8077 !important;
+    transition: background-size 450ms cubic-bezier(.2,.8,.2,1) !important;
+}
+
+.btnBP-booking:hover,
+.btnBP-booking:focus-visible{
+    color: #000 !important;
+    background-size: 200% 200%, 200% 200%, auto !important;
+}
+
+/* Banner arrow icon: SVG is black by default; invert it to white on the teal base,
+   then return to black when the hover background turns white. */
+.banner-principal .btnBP-booking .arrowBTN{
+    filter: invert(1);
+}
+.banner-principal .btnBP-booking:hover .arrowBTN,
+.banner-principal .btnBP-booking:focus-visible .arrowBTN{
+    filter: invert(0);
+}
+.arrowBTN{
+    width: 10px !important;
+    height: 10px !important;
+}
+
+/* Navbar variant: invert hero button colors but keep the diagonal animation.
+   Starts white and transitions to #1c8077 on hover/focus. */
+.nav__bookingBtn.btnBP-booking{
+    width: auto !important;
+    min-width: 132px !important;
+    height: 44px !important;
+    padding: 0 16px !important;
+    border: 1px solid #1c8077 !important;
+    color: #000 !important;
+
+    background-color: #ffffff !important;
+    background:
+        linear-gradient(135deg, #1c8077 0 50%, transparent 50% 100%) left top / 0% 0% no-repeat,
+        linear-gradient(315deg, #1c8077 0 50%, transparent 50% 100%) right bottom / 0% 0% no-repeat,
+        #ffffff !important;
+    transition: background-size 450ms cubic-bezier(.2,.8,.2,1) !important;
+}
+
+.nav__bookingBtn.btnBP-booking:hover,
+.nav__bookingBtn.btnBP-booking:focus-visible{
+    color: #fff !important;
+    background-size: 200% 200%, 200% 200%, auto !important;
+}
+
+.nav__bookingBtn.btnBP-booking:hover .arrowBTN,
+.nav__bookingBtn.btnBP-booking:focus-visible .arrowBTN{
+    filter: invert(1);
+}
+
+/* Reservation bar (Home) */
+.barra-reserva{
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    margin-top: -48px; /* float over hero bottom like the reference */
+    margin-bottom: 28px;
+    pointer-events: none; /* only allow interactions inside card */
+}
+
+.barra-reservaCard{
+    width: min(1200px, 92%);
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 18px 45px rgba(17, 24, 39, 0.12);
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+.barra-reservaField{
+    flex: 1 1 0;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 28px 18px;
+    position: relative;
+    user-select: none;
+}
+
+.barra-reservaField--clickable{
+    cursor: pointer;
+}
+
+.barra-reservaField--clickable:hover{
+    background: #f8fafc;
+}
+
+.barra-reservaIcon{
+    opacity: 0.9;
+}
+
+.barra-reservaFieldText{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.barra-reservaHint{
+    font-size: 12px !important;
+    font-family: 'Montserrat-Regular', sans-serif !important;
+    color: rgba(17, 24, 39, 0.55) !important;
+    letter-spacing: 0.2px;
+}
+
+.barra-reservaMain{
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    font-family: 'Montserrat-Regular', sans-serif !important;
+    color: #111827 !important;
+}
+
+.barra-reservaArrow{
+    margin-left: auto;
+    opacity: 0.55;
+}
+
+.barra-reservaDivider{
+    align-self: center;
+    height: 48px !important;
+    opacity: 0.5;
+}
+
+.barra-reservaNativeInput{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.barra-reservaBtnWrap{
+    display: flex;
+    align-items: center;
+    padding: 12px 14px 12px 0;
+}
+
+.barra-reservaBtn{
+    background-color: #1c8077 !important;
+    /* Same diagonal-split hover animation as .btnBP-booking, but with the gold base */
+    background:
+        linear-gradient(135deg, #152a38 0 50%, transparent 50% 100%) left top / 0% 0% no-repeat,
+        linear-gradient(315deg, #152a38 0 50%, transparent 50% 100%) right bottom / 0% 0% no-repeat,
+        #1c8077 !important;
+    transition: background-size 450ms cubic-bezier(.2,.8,.2,1) !important;
+    color: #ffffff !important;
+    height: 56px !important;
+    border-radius: 8px !important;
+    font-family: 'Montserrat-Regular', sans-serif !important;
+    padding: 0 22px !important;
+    font-weight: 200 !important;
+    letter-spacing: 0.6px !important;
+    text-transform: uppercase !important;
+    white-space: nowrap;
+    box-shadow: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.barra-reservaBtn:hover,
+.barra-reservaBtn:focus-visible{
+    background-size: 200% 200%, 200% 200%, auto !important;
+}
+
+/* Guests menu */
+.barra-reservaGuestsRow{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 18px;
+    min-width: 260px;
+}
+
+.barra-reservaGuestsLabel{
+    font-weight: 600 !important;
+}
+
+.barra-reservaGuestsStepper{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.barra-reservaGuestsValue{
+    width: 22px;
+    text-align: center;
+    font-weight: 700 !important;
+}
+.listado-cabana-container{
+    min-height: 80vh;
+    width: 100%;
+    background-color: #f6f6ed;
+    padding-top: 10rem;
+}
+.listado-cabana-content-text{
+    width: 50%;
+}
+
+.listado-cabana-title{
+    font-size: 4rem !important;
+    font-weight: 800 !important;
+    font-family: 'canela', sans-serif !important;
+    color: #152a38;
+    text-align: center !important;
+    line-height: 1 !important;
+}
+.listado-cabana-subtitle{
+    font-size: 1.5rem !important;
+    font-family: 'Montserrat-Regular', sans-serif !important;
+    font-weight: 400 !important;
+    color: #1c8077 !important;
+    text-align: center !important;
+}
+.listado-cabana-content-cards{
+    width: 100%;
+    /* Keep layout stable; only animate via transforms for smoothness */
+    gap: 18px;
+    position: relative;
+    padding-inline: 24px;
+    flex-wrap: wrap;
+}
+.listado-cabana-card{
+    width: 210px;
+    height: 300px;
+    padding: 0.2rem  !important;
+    background-color: #ffffff;
+    border-radius: 10px;
+    flex: 0 0 auto;
+    /* "stack" look before the section is in view */
+    will-change: transform;
+    transform-origin: center center;
+    backface-visibility: hidden;
+    z-index: calc(10 + var(--i, 0));
+    transform:
+        translateX(calc((var(--i, 0) - 3.5) * -52px))
+        translateY(calc((var(--i, 0) - 3.5) * 7px))
+        rotate(calc((var(--i, 0) - 3.5) * 2deg))
+        scale(0.98);
+    transition:
+        transform 900ms cubic-bezier(.2,.8,.2,1),
+        box-shadow 250ms ease;
+    box-shadow: 0 10px 30px rgba(17, 24, 39, 0.10);
+}
+.listado-cabana-content-cards.is-active .listado-cabana-card{
+    transform: translateX(0) translateY(0) rotate(0) scale(1);
+}
+.listado-cabana-card:hover{
+    box-shadow: 0 18px 45px rgba(17, 24, 39, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce){
+    .listado-cabana-card{
+        transition: none !important;
+        transform: none !important;
+    }
+    .listado-cabana-content-cards{
+        gap: 18px;
+    }
+}
+.listado-cabana-card-image{
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.listado-cabana-card-title{
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+}
+.listado-cabana-card-button{
+    width: 34px !important;
+    min-width: 34px !important;
+    height: 35px;
+    border-radius: 50% !important;
+    object-fit: cover;
+    background-color: transparent;
+    border: 1px solid rgba(117, 117, 117, 0.61) !important;
+}
+.listado-cabana-card-button:hover{
+    background-color: #1c80788c !important;
+    color: #ffffff !important;
+}
+
+@media (max-width: 980px){
+    .barra-reserva{
+        margin-top: -24px;
+    }
+
+    .barra-reservaCard{
+        flex-wrap: wrap;
+        padding: 8px;
+        gap: 8px;
+        border-radius: 14px;
+    }
+
+    .barra-reservaDivider{
+        display: none;
+    }
+
+    .barra-reservaField{
+        min-width: 240px;
+        flex: 1 1 240px;
+        border-radius: 10px;
+        background: #ffffff;
+        box-shadow: 0 1px 0 rgba(17, 24, 39, 0.08);
+    }
+
+    .barra-reservaBtnWrap{
+        width: 100%;
+        padding: 0;
+    }
+
+    .barra-reservaBtn{
+        width: 100% !important;
+    }
+}
+     

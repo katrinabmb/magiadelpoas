@@ -1,0 +1,21 @@
+{
+    "en": {
+      "type" : "en",
+      "buttonText" : "EN"
+     
+     
+    
+  },
+
+    "es": {
+      "type" : "es",
+      "buttonText" : "ES"
+   
+  
+    },
+
+    "fr": {
+      "type" : "fr",
+      "buttonText" : "FR"
+    }
+  }
