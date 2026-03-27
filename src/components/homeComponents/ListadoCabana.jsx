@@ -23,22 +23,10 @@ const ListadoCabana = () => {
 
 const cabanas = [
   {
-    id: 1,
-    title: "Sky",
+    id: 7,
+    title: "Antia",
     url: "#",
-    image: "/images/sky.svg",
-  },
-  {
-    id: 2,
-    title: "Roble Escondido",
-    url: "#",
-    image: "/images/robleescondido.svg",
-  },
-  {
-    id: 3,
-    title: "Luna",
-    url: "#",
-    image: "/images/luna.svg",
+    image: "/images/antia.svg",
   },
   {
     id: 4,
@@ -47,10 +35,34 @@ const cabanas = [
     image: "/images/liliam.svg",
   },
   {
+    id: 3,
+    title: "Luna",
+    url: "#",
+    image: "/images/luna.svg",
+  },
+  {
+    id: 2,
+    title: "Roble Escondido",
+    url: "#",
+    image: "/images/robleescondido.svg",
+  },
+  {
     id: 5,
     title: "Domo",
     url: "#",
     image: "/images/domo.svg",
+  },
+  {
+    id: 8,
+    title: "Colima",
+    url: "#",
+    image: "/images/colima.svg",
+  },
+  {
+    id: 1,
+    title: "Sky",
+    url: "#",
+    image: "/images/sky.svg",
   },
   {
     id: 6,
@@ -58,18 +70,7 @@ const cabanas = [
     url: "#",
     image: "/images/domodeluxe.svg",
   },
-  {
-    id: 7,
-    title: "Antia",
-    url: "#",
-    image: "/images/antia.svg",
-  },
-  {
-    id: 8,
-    title: "Colima",
-    url: "#",
-    image: "/images/colima.svg",
-  }
+
 ];
 
   useEffect(() => {

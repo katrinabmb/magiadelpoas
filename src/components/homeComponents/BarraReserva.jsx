@@ -41,7 +41,7 @@ const DateField = ({ label, value, onChange }) => {
     <Box className="barra-reservaField barra-reservaField--clickable" onClick={openPicker}>
       <CalendarMonthOutlinedIcon className="barra-reservaIcon" />
       <Box className="barra-reservaFieldText">
-        <Typography className="barra-reservaHint">select date</Typography>
+        <Typography className="barra-reservaHint">Selecciona Fecha</Typography>
         <Typography className="barra-reservaMain">
           {value ? formatISOToReadable(value) : label}
         </Typography>
@@ -62,14 +62,28 @@ const DateField = ({ label, value, onChange }) => {
 const BarraReserva = () => {
   const [checkIn, setCheckIn] = useState("")
   const [checkOut, setCheckOut] = useState("")
-  const [rooms, setRooms] = useState(1)
+  const [cabin, setCabin] = useState("")
   const [adults, setAdults] = useState(1)
   const [children, setChildren] = useState(0)
 
   const [roomsAnchor, setRoomsAnchor] = useState(null)
   const [guestsAnchor, setGuestsAnchor] = useState(null)
 
-  const roomsLabel = useMemo(() => `${rooms} room`, [rooms])
+  const cabinOptions = useMemo(
+    () => [
+      "Antia",
+      "Lilliam",
+      "Luna",
+      "Roble escondido",
+      "Domo",
+      "Colima",
+      "Sky",
+      "Domo deluxe",
+    ],
+    []
+  )
+
+  const roomsLabel = useMemo(() => cabin || "Cabaña", [cabin])
   const guestsLabel = useMemo(() => `${adults} adult, ${children} child`, [adults, children])
 
   const handleExplore = () => {
@@ -92,7 +106,7 @@ const BarraReserva = () => {
         >
           <BedOutlinedIcon className="barra-reservaIcon" />
           <Box className="barra-reservaFieldText">
-            <Typography className="barra-reservaHint">Select room</Typography>
+            <Typography className="barra-reservaHint">Selecciona Cabaña</Typography>
             <Typography className="barra-reservaMain">{roomsLabel}</Typography>
           </Box>
           <KeyboardArrowDownIcon className="barra-reservaArrow" />
@@ -108,7 +122,7 @@ const BarraReserva = () => {
         >
           <PersonOutlineIcon className="barra-reservaIcon" />
           <Box className="barra-reservaFieldText">
-            <Typography className="barra-reservaHint">guests</Typography>
+            <Typography className="barra-reservaHint">Huespedes</Typography>
             <Typography className="barra-reservaMain">{guestsLabel}</Typography>
           </Box>
           <KeyboardArrowDownIcon className="barra-reservaArrow" />
@@ -120,7 +134,7 @@ const BarraReserva = () => {
             onClick={handleExplore}
             endIcon={<img src="/images/arrowBTNW.svg" alt="arrow right" className="arrowBTN" />}
           >
-            EXPLORE MORE
+            EXPLORAR
           </Button>
         </Box>
       </Box>
@@ -129,18 +143,18 @@ const BarraReserva = () => {
         anchorEl={roomsAnchor}
         open={Boolean(roomsAnchor)}
         onClose={() => setRoomsAnchor(null)}
-        MenuListProps={{ "aria-label": "Rooms" }}
+        MenuListProps={{ "aria-label": "Cabañas" }}
       >
-        {[1, 2, 3, 4, 5].map((n) => (
+        {cabinOptions.map((name) => (
           <MenuItem
-            key={n}
-            selected={rooms === n}
+            key={name}
+            selected={cabin === name}
             onClick={() => {
-              setRooms(n)
+              setCabin(name)
               setRoomsAnchor(null)
             }}
           >
-            {n} room{n > 1 ? "s" : ""}
+            {name}
           </MenuItem>
         ))}
       </Menu>

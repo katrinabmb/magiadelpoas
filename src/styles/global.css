@@ -21,6 +21,12 @@
   font-family: 'Montserrat-Regular';
   src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('/fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
 *,
 *::before,
 *::after {
@@ -255,3 +261,96 @@ a {
   color: var(--muted);
 }
 
+/* Footer */
+.footer{
+  background: #152a38;
+  color: #ffffff;
+  padding: 42px var(--pad-x) 26px;
+}
+
+.footer__inner{
+  max-width: var(--container-max);
+  width: 100%;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+.footer__logo{
+  width: 120px;
+  height: auto;
+}
+
+.footer__brand{
+  font-family: 'canela', serif !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.12rem !important;
+}
+
+.footer__tagline{
+  font-family: 'Montserrat-Regular', sans-serif !important;
+  font-size: 0.9rem !important;
+  opacity: 0.85;
+}
+
+.footer__socialBtn{
+  color: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 12px !important;
+}
+
+.footer__socialBtn:hover{
+  background: rgba(255, 255, 255, 0.10) !important;
+}
+
+.footer__addressTitle{
+  font-family: 'Montserrat-Bold', sans-serif !important;
+  font-size: 0.85rem !important;
+  opacity: 0.9;
+}
+
+.footer__addressText{
+  font-family: 'Montserrat-Regular', sans-serif !important;
+  font-size: 0.9rem !important;
+  opacity: 0.85;
+}
+
+.footer__copy{
+  max-width: var(--container-max);
+  margin: 22px auto 0;
+  opacity: 0.75;
+  font-size: 0.85rem !important;
+  text-align: center;
+  font-family: 'Montserrat-Regular', sans-serif !important;
+}
+
+@media (max-width: 860px){
+  .footer__inner{
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .footer__right{
+    align-items: flex-start !important;
+  }
+}
+
+
+@media (min-width: 360px) and (max-width: 767px){
+
+}
+/* Tablet vertical */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+}
+/* Tablet horizontal */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+
+}
+@media (min-width: 1200px) and (max-width: 1366px) {
+
+}
+@media (min-width: 1367px) and (max-width: 1600px) {
+  
+}

@@ -41,7 +41,11 @@ const Navbar = () => {
     <header className={navClassName}>
       <div className="nav__inner">
         <a className="nav__logo" href="#home" aria-label="Ir al inicio">
-          Magia del Poás
+          <img
+            src={isScrolled ? "/images/logoLcolor.svg" : "/images/logoLblanco.svg"}
+            alt="logo"
+            className="logo-navbar"
+          />
         </a>
 
         <button
