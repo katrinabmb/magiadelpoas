@@ -23,6 +23,8 @@ const getInitials = (name = "") => {
 }
 
 const TestimoniosCard = ({ texto, nombre, plataforma, rating, icon }) => {
+    const baseUrl = import.meta.env.BASE_URL
+    const iconSrc = icon?.startsWith("/") ? `${baseUrl}${icon.slice(1)}` : icon
     return (
         <Stack className="testimonios-card" spacing={3} alignItems="center" justifyContent="center">
             <Typography className="testimonios-card-texto">&quot;{texto}&quot;</Typography>
@@ -35,7 +37,7 @@ const TestimoniosCard = ({ texto, nombre, plataforma, rating, icon }) => {
                 <Stack spacing={0.5} justifyContent="flex-start" alignItems="flex-start">
                     <Typography className="testimonios-card-nombre">{nombre}</Typography>
                     <Stack direction="row" alignItems="center" justifyContent="flex-start" spacing={1}>
-                        <img src={icon} alt={plataforma} className="testimonios-card-icon" />
+                        <img src={iconSrc} alt={plataforma} className="testimonios-card-icon" />
                     <Typography className="testimonios-card-plataforma">{plataforma}</Typography>
                     </Stack>
                     

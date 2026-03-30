@@ -5,9 +5,11 @@ import { useEffect, useRef, useState } from "react";
 
 
 const CardCabana = ({ title, url, image, index }) => {
+  const baseUrl = import.meta.env.BASE_URL
+  const imageSrc = image?.startsWith("/") ? `${baseUrl}${image.slice(1)}` : image
   return (
     <Stack className="listado-cabana-card" spacing={1} style={{ "--i": index }}>
-      <Box style={{backgroundImage: `url(${image})`}} className="listado-cabana-card-image" />
+      <Box style={{backgroundImage: `url(${imageSrc})`}} className="listado-cabana-card-image" />
       <Stack direction="row" justifyContent="space-between" alignItems="center" style={{padding: '0 0.5rem'}}>
         <Typography className="listado-cabana-card-title">{title}</Typography>
         <Button className="listado-cabana-card-button" href={url}><ArrowForwardIcon sx={{ fontSize: 20, color: '#000' }} /></Button>

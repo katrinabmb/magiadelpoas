@@ -60,6 +60,7 @@ const DateField = ({ label, value, onChange }) => {
 }
 
 const BarraReserva = () => {
+  const baseUrl = import.meta.env.BASE_URL
   const [checkIn, setCheckIn] = useState("")
   const [checkOut, setCheckOut] = useState("")
   const [cabin, setCabin] = useState("")
@@ -132,7 +133,7 @@ const BarraReserva = () => {
           <Button
             className="barra-reservaBtn"
             onClick={handleExplore}
-            endIcon={<img src="/images/arrowBTNW.svg" alt="arrow right" className="arrowBTN" />}
+            endIcon={<img src={`${baseUrl}images/arrowBTNW.svg`} alt="arrow right" className="arrowBTN" />}
           >
             EXPLORAR
           </Button>

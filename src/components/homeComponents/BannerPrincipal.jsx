@@ -1,8 +1,14 @@
 import { Box, Button, Stack, Typography } from "@mui/material"
 
 const BannerPrincipal = () => {
+  const baseUrl = import.meta.env.BASE_URL
   return (
-<Stack className="banner-principal" justifyContent="center" alignItems="flex-start">
+<Stack
+  className="banner-principal"
+  justifyContent="center"
+  alignItems="flex-start"
+  style={{ backgroundImage: `url(${baseUrl}images/bannerprincipal.svg)` }}
+>
 <Box className="banner-overlay"/>
 
 <Stack className="banner-content" spacing={-1}>
@@ -14,7 +20,7 @@ const BannerPrincipal = () => {
 <br/>
   <Button className="btnBP-booking">
     Reservar
-    <img src="/images/arrowBTN.svg" alt="arrow right" className="arrowBTN" />
+    <img src={`${baseUrl}images/arrowBTN.svg`} alt="arrow right" className="arrowBTN" />
     </Button>
 </Stack>
 

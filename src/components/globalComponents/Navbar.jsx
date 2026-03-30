@@ -3,6 +3,7 @@ import { LanguageContext } from "../LanguageProvider";
 
 const Navbar = () => {
   const { translation, toggleLanguage } = useContext(LanguageContext);
+  const baseUrl = import.meta.env.BASE_URL
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -42,7 +43,7 @@ const Navbar = () => {
       <div className="nav__inner">
         <a className="nav__logo" href="#home" aria-label="Ir al inicio">
           <img
-            src={isScrolled ? "/images/logoLcolor.svg" : "/images/logoLblanco.svg"}
+            src={isScrolled ? `${baseUrl}images/logoLcolor.svg` : `${baseUrl}images/logoLblanco.svg`}
             alt="logo"
             className="logo-navbar"
           />
@@ -90,7 +91,7 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Explorar
-              <img src="/images/arrowBTN.svg" alt="arrow right" className="arrowBTN" />
+              <img src={`${baseUrl}images/arrowBTN.svg`} alt="arrow right" className="arrowBTN" />
             </a>
           </div>
         </nav>

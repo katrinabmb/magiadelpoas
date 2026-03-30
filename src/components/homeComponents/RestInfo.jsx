@@ -1,6 +1,7 @@
 import { Grid, Stack, Typography } from "@mui/material"
 
 const RestInfo = () => {
+  const baseUrl = import.meta.env.BASE_URL
 
   const restinfo = [
     {
@@ -32,7 +33,7 @@ const RestInfo = () => {
   return (
 <Stack direction="row" justifyContent="space-evenly" alignItems="center" className="restinfo-container">
 
-  <img src="/images/restaurante.svg" alt="restinfo" className="restinfo-image"/>
+  <img src={`${baseUrl}images/restaurante.svg`} alt="restinfo" className="restinfo-image"/>
 
   <Stack className="restinfo-content" spacing={2} alignItems="flex-start" justifyContent="center">
     <Typography className="restinfo-title">Restaurante y experiencia unica</Typography>

@@ -12,21 +12,6 @@
   --primary-hover: #115e59;
 }
 
-@font-face {
-  font-family: 'canela';
-  src: url('/fonts/Canela-Regular-Trial.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'Montserrat-Regular';
-  src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Montserrat-Bold';
-  src: url('/fonts/Montserrat-Bold.ttf') format('truetype');
-}
-
 *,
 *::before,
 *::after {
