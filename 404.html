@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404</title>
+    <script type="text/javascript">
+      // SPA redirect for GitHub Pages (rafgraph/spa-github-pages)
+      // If your site is served from https://<user>.github.io/<repo>/ then segmentCount = 1
+      // If you use a custom domain at the root, segmentCount = 0
+      var segmentCount = window.location.hostname.endsWith("github.io") ? 1 : 0
+
+      var l = window.location
+      l.replace(
+        l.protocol +
+          "//" +
+          l.hostname +
+          (l.port ? ":" + l.port : "") +
+          l.pathname.split("/").slice(0, 1 + segmentCount).join("/") +
+          "/?/" +
+          l.pathname.slice(1).split("/").slice(segmentCount).join("/").replace(/&/g, "~and~") +
+          (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+          l.hash
+      )
+    </script>
+  </head>
+  <body></body>
+</html>
+
