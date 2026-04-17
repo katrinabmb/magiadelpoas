@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Box, Button, Stack, Typography } from "@mui/material"
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { LanguageContext } from "../LanguageProvider";
 
 
 const CardCabana = ({ title, url, image, index }) => {
@@ -22,6 +23,7 @@ const ListadoCabana = () => {
   const [isActive, setIsActive] = useState(false);
   const cardsRef = useRef(null);
   const activeRef = useRef(false);
+  const { translation } = useContext(LanguageContext)
 
 const cabanas = [
   {
@@ -111,8 +113,8 @@ const cabanas = [
 <Stack className="listado-cabana-container" alignItems="center" spacing={8}>
 
   <Stack className="listado-cabana-content-text" alignItems="center">
-    <Typography className="listado-cabana-subtitle">Creando momentos inolvidables</Typography>
-    <Typography className="listado-cabana-title">Nuestra mision es crear experiencias inolvidables para ti</Typography>
+    <Typography className="listado-cabana-subtitle">{translation?.subtitleS2}</Typography>
+    <Typography className="listado-cabana-title">{translation?.titleS2}</Typography>
   </Stack>
 
   <Stack

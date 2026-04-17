@@ -28,12 +28,12 @@ const Navbar = () => {
 
   const links = useMemo(
     () => [
-      { label: "Inicio", href: "#home" },
-      { label: "item1", href: "#experiencias" },
-      { label: "item2", href: "#galeria" },
-      { label: "item3", href: "#contacto" },
+      { label: translation?.home, href: "#home" },
+      { label: translation?.cabins, href: "#cabanas" },
+      { label: translation?.restaurant, href: "#restaurante" },
+      { label: translation?.testimonials, href: "#testimonios" },
     ],
-    []
+    [translation]
   );
 
   const navClassName = `nav ${isScrolled ? "nav--scrolled" : "nav--top"}`;
@@ -90,7 +90,7 @@ const Navbar = () => {
               href="#reservar"
               onClick={() => setIsMenuOpen(false)}
             >
-              Explorar
+              {translation?.explore}
               <img src={`${baseUrl}images/arrowBTN.svg`} alt="arrow right" className="arrowBTN" />
             </a>
           </div>

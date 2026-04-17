@@ -1,32 +1,34 @@
 import { Grid, Stack, Typography } from "@mui/material"
+import { useContext } from "react"
+import { LanguageContext } from "../LanguageProvider"
 
 const RestInfo = () => {
   const baseUrl = import.meta.env.BASE_URL
-
+  const { translation } = useContext(LanguageContext)
   const restinfo = [
     {
       id: 1,
-      title: "Comida gourmet",
+      title: translation?.listS3[0]?.title,
     },
     {
       id: 2,
-      title: "Variedad de platos",
+      title: translation?.listS3[1]?.title,
     },
     {
       id: 3,
-      title: "Siempre fresco y delicioso",
+      title: translation?.listS3[2]?.title,
     },
     {
       id: 4,
-      title: "Ambiente acogedor",
+      title: translation?.listS3[3]?.title,
     },
     {
       id: 5,
-      title: "Servicio personalizado",
+      title: translation?.listS3[4]?.title,
     },
     {
       id: 6,
-      title: "Pet-friendly",
+      title: translation?.listS3[5]?.title,
     },
   ]
 
@@ -36,9 +38,9 @@ const RestInfo = () => {
   <img src={`${baseUrl}images/restaurante.svg`} alt="restinfo" className="restinfo-image"/>
 
   <Stack className="restinfo-content" spacing={2} alignItems="flex-start" justifyContent="center">
-    <Typography className="restinfo-title">Restaurante y experiencia unica</Typography>
-    <Typography className="restinfo-subtitle">Almuerzos y cenas con sabor local y frescura</Typography>
-    <Typography className="restinfo-text">Disfruta una propuesta cuidada, con opciones para compartir, platos bien ejecutados. Cocinamos con producto fresco, atención al detalle y un ambiente acogedor para que tu visita se sienta especial.</Typography>
+    <Typography className="restinfo-title">{translation?.subtitleS3}</Typography>
+    <Typography className="restinfo-subtitle">{translation?.titleS3}</Typography>
+    <Typography className="restinfo-text">{translation?.textS3}</Typography>
 
     <Grid container spacing={2} className="restinfo-list">
       {restinfo.map((item) => (

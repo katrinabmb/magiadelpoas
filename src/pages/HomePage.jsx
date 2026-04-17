@@ -8,13 +8,25 @@ import Testimonios from "../components/homeComponents/Testimonios";
 
 const HomePage = () => {
   return (
-    <div className="page">
+    <div className="page" id="home">
       <Navbar />
       <BannerPrincipal />
-      <BarraReserva />
-      <ListadoCabana />
-      <RestInfo />
-      <Testimonios />
+
+      <section id="reservar" className="anchor-section">
+        <BarraReserva />
+      </section>
+
+      <section id="cabanas" className="anchor-section">
+        <ListadoCabana />
+      </section>
+
+      <section id="restaurante" className="anchor-section">
+        <RestInfo />
+      </section>
+
+      <section id="testimonios" className="anchor-section">
+        <Testimonios />
+      </section>
       <Footer />
     
     </div>

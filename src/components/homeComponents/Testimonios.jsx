@@ -1,6 +1,8 @@
 import { Avatar, Divider, Rating, Stack, Typography } from "@mui/material"
 import { useEffect, useMemo, useState } from "react"
 import PropTypes from "prop-types"
+import { useContext } from "react"
+import { LanguageContext } from "../LanguageProvider"
 
 const PAGE_SIZE = 3
 const AUTOPLAY_MS = 6500
@@ -29,7 +31,7 @@ const TestimoniosCard = ({ texto, nombre, plataforma, rating, icon }) => {
         <Stack className="testimonios-card" spacing={3} alignItems="center" justifyContent="center">
             <Typography className="testimonios-card-texto">&quot;{texto}&quot;</Typography>
             <Divider className="testimonios-card-divider" />
-            <Stack direction="row" alignItems="center" justifyContent="space-between"sx={{ width: "90%" }}>
+            <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ width: "90%" }}>
                 <Stack direction="row" alignItems="center" justifyContent="center" spacing={1}>
                 <Avatar className="testimonios-avatar" alt={nombre}>
                     {getInitials(nombre)}
@@ -58,89 +60,99 @@ TestimoniosCard.propTypes = {
     icon: PropTypes.string.isRequired,
 }
 
-const TESTIMONIOS = [
-    {
-        id: 1,
-        texto: "Un lugar increíble. La habitación espectacular, un ambiente relajante y tranquilo, el servicio excelente y muy claras las indicaciones. Serviciales, la decoración en la habitación les quedó hermosa y Justo como lo solicité. Me encantó y definitivamente regreso! Gracias 🥰",
-        nombre: "Carol Gonzalez",
-        plataforma: "Google",
-        rating: 5,
-        icon: "/images/google.svg",
-    },
-    {
-        id: 2,
-        texto: "Un lugar espectacular. Estuvimos hospedados en la cabaña Deluxe Luna. Un diseño cálido, privado, lujoso y acogedor. Lleno de detalles, juegos de mesa, chimenea, todo limpio y oliendo rico. Un 100 de 100",
-        nombre: "Esteban Quesada",
-        plataforma: "Google",
-        rating: 5,
-        icon: "/images/google.svg",
-    },
-    {
-        id: 3,
-        texto: "Nos encantó este lugar, es seguro, accesible en cualquier vehículo, diseño interior de ensueño y rodeado por animales de granja, senderos y un clima impresionante. Las vistas son hermosas desde la habitación y además cuentan con todo lo necesario para cocinar.",
-        nombre: "Natalia Solano",
-        plataforma: "Google",
-        rating: 5,
-        icon: "/images/google.svg",
-    },
-    {
-        id: 4,
-        texto: "100% recomendadas, sus instalaciones son impecables y ordenadas, se respira un ambiente de paz y trankilidad, un lugar 100% recomendado para espacar de la rutina y cuentan con un restaurante con excelente servicio y comida deliciosa.",
-        nombre: "Grettel Hernández",
-        plataforma: "Google",
-        rating: 5,
-        icon: "/images/google.svg",
-    },
-    {
-        id: 5,
-        texto: "Vinimos a almorzar y volvimos para un evento de vinos. La comida y el servicio son excelentes; sin duda, volveremos con frecuencia. Los dueños son encantadores y muy acogedores.",
-        nombre: "J.P",
-        plataforma: "Google",
-        rating: 5,
-        icon: "/images/google.svg",
-    },
-    {
-        id: 6,
-        texto: "Muy espacioso con gran vista al valle central. Es cómodo y acogedor. Buena seguridad. Ideal para ir con pareja o amigos. Me gusto mucho las areas verdes y los ambientes de terraza y balcón.",
-        nombre: "Mathiws Marin",
-        plataforma: "Google",
-        rating: 5,
-        icon: "/images/google.svg",
-    },
-    {
-        id: 7,
-        texto: "La cabaña Roble Escondido es hermosa, la encontramos muy comfortable y equipada con todo lo necesario, una experiencia muy agradable y amena. La pasamos muy bien.",
-        nombre: "Tiffany Chavarría",
-        plataforma: "Google",
-        rating: 5,
-        icon: "/images/google.svg",
-    },
-    {
-        id: 8,
-        texto: "Sin duda el mejor lugar para alojarse cerca de Volcán Poas! Alojamiento de lujo y rústico con vistas excepcionales y el mejor personal de la historia! Las habitaciones eran muy cómodas y limpias, puedo decir que todo este lodge es una joya escondida en el corazón de Poas Costa Rica!",
-        nombre: "Davina S",
-        plataforma: "TripAdvisor",
-        rating: 5,
-        icon: "/images/tripadvisor.svg",
-    },
-    {
-        id: 9,
-        texto: "Quedamos sumamente enamorados de este lugar tan pintoresco y bello, con hermosas vistas y una decoracion inigualable, la atencion por parte de la Host Ariana fue espectacular, desde inicio a fin. Lugar que recordaremos con mucho cariño, esperamos volver pronto!",
-        nombre: "Flora R",
-        plataforma: "TripAdvisor",
-        rating: 5,
-        icon: "/images/tripadvisor.svg",
-    },
-]
+
 
 const Testimonios = () => {
+    const { translation } = useContext(LanguageContext)
+
+    const TESTIMONIOS = [
+        {
+            id: 1,
+            texto: translation?.listS4[0]?.text,
+            nombre: translation?.listS4[0]?.title,
+            plataforma: "Google",
+            rating: 5,
+            icon: "/images/google.svg",
+        },
+        {
+            id: 2,
+            texto: translation?.listS4[1]?.text,
+            nombre: translation?.listS4[1]?.title,
+            plataforma: "Google",
+            rating: 5,
+            icon: "/images/google.svg",
+        },
+        {
+            id: 3,
+            texto: translation?.listS4[2]?.text,
+            nombre: translation?.listS4[2]?.title,
+            plataforma: "Google",
+            rating: 5,
+            icon: "/images/google.svg",
+        },
+        {
+            id: 4,
+            texto: translation?.listS4[3]?.text,
+            nombre: translation?.listS4[3]?.title,
+            plataforma: "Google",
+            rating: 5,
+            icon: "/images/google.svg",
+        },
+        {
+            id: 5,
+            texto: translation?.listS4[4]?.text,
+            nombre: translation?.listS4[4]?.title,
+            plataforma: "Google",
+            rating: 5,
+            icon: "/images/google.svg",
+        },
+        {
+            id: 6,
+            texto: translation?.listS4[5]?.text,
+            nombre: translation?.listS4[5]?.title,
+            plataforma: "Google",
+            rating: 5,
+            icon: "/images/google.svg",
+        },
+        {
+            id: 7,
+            texto: translation?.listS4[6]?.text,
+            nombre: translation?.listS4[6]?.title,
+            plataforma: "Google",
+            rating: 5,
+            icon: "/images/google.svg",
+        },
+        {
+            id: 8,
+            texto: translation?.listS4[7]?.text,
+            nombre: translation?.listS4[7]?.title,
+            plataforma: "TripAdvisor",
+            rating: 5,
+            icon: "/images/tripadvisor.svg",
+        },
+        {
+            id: 9,
+            texto: translation?.listS4[8]?.text,
+            nombre: translation?.listS4[8]?.title,
+            plataforma: "TripAdvisor",
+            rating: 5,
+            icon: "/images/tripadvisor.svg",
+        },
+    ]
+
+
+
+
     const pages = useMemo(() => {
         const out = []
         for (let i = 0; i < TESTIMONIOS.length; i += PAGE_SIZE) {
             out.push(TESTIMONIOS.slice(i, i + PAGE_SIZE))
         }
         return out
-    }, [])
+    }, [TESTIMONIOS])
+
+
+
 
     const pageCount = pages.length
 
@@ -193,8 +205,16 @@ const Testimonios = () => {
 
   return (
 <Stack className="testimonios-container" spacing={4} alignItems="center" justifyContent="center">
-    <Typography className="testimonios-title">Historias de inolvidables momentos</Typography>
-    <Typography className="testimonios-subtitle">Conoce las experiencias de<br/>nuestros visitantes</Typography>
+    <Typography className="testimonios-title">
+        {translation?.subtitleS4 ?? "Historias de inolvidables momentos"}
+    </Typography>
+    <Typography className="testimonios-subtitle">
+        {translation?.titleS4 ?? (
+            <>
+                Conoce las experiencias de<br />nuestros visitantes
+            </>
+        )}
+    </Typography>
     <div
         className="testimonios-carousel"
         onMouseEnter={() => setIsPaused(true)}

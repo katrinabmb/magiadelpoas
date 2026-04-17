@@ -1,21 +1,199 @@
 {
     "en": {
       "type" : "en",
-      "buttonText" : "EN"
-     
+      "buttonText" : "ESPAÑOL",
+      "subtitle" : "Live the experience of the mountain",
+      "title" : "Discover",
+      "title2" : "Magia del Poás",
+      "buttonHome" : "Reserve",
+      "home" : "Home",
+      "explore" : "Explore",
+      "cabins" : "Cabins",
+      "restaurant" : "Restaurant",
+      "testimonials" : "Testimonials",
+      "guests" : "Guests",
+      "fecha" : "Select Date",
+      "subtitleS2" : "Creating unforgettable moments",
+      "titleS2" : "Our mission is to create unforgettable experiences for you",
+      "subtitleS3" : "Unique restaurant and experience",
+      "titleS3" : "Lunches and dinners with local flavor and freshness",
+      "textS3" : "Enjoy a carefully prepared proposal, with options to share, well-executed dishes. We cook with fresh product, attention to detail and a cozy atmosphere so your visit feels special.",
+      "listS3" : [
+        {
+          "id": 1,
+          "title": "Premium meat cuts"
+        },
+        {
+          "id": 2,
+          "title": "Variety of dishes"
+        },
+        {
+          "id": 3,
+          "title": "Artisanal Pizzas"
+        },
+        {
+          "id": 4,
+          "title": "Cozy atmosphere"
+        },
+        {
+          "id": 5,
+          "title": "Delicious Pastas"
+        },
+        {
+          "id": 6,
+          "title": "Pet-friendly"
+        }
+      ],
+      "subtitleS4" : "Unforgettable moments stories",
+      "titleS4" : "Know the experiences of our visitors",
+      "listS4" : [
+        {
+          "id": 1,
+          "title": "Carol Gonzalez",
+          "text": "An incredible place. The room is spectacular, a relaxing and quiet atmosphere, excellent service and very clear instructions. Service, the decoration in the room was beautiful and exactly as I requested. I loved it and definitely return! Thanks 🥰"
+        },
+        {
+          "id": 2,
+          "title": "Esteban Quesada",
+          "text": "A spectacular place. We stayed in the Deluxe Luna cabin. A warm design, private, luxurious and cozy. Full of details, table games, fireplace, everything clean and smelling good. A 100 out of 100"
+        },
+        {
+          "id": 3,
+          "title": "Natalia Solano",
+          "text": "We loved this place, it is safe, accessible in any vehicle, dream-like interior design and surrounded by farm animals, trails and an impressive climate. The views are beautiful from the room and also have everything needed to cook."
+        },
+        {
+          "id": 4,
+          "title": "Grettel Hernández",
+          "text": "100% recommended, their installations are impeccable and organized, a peaceful and tranquil atmosphere, a 100% recommended place to escape the routine and have a restaurant with excellent service and delicious food."
+        },
+        {
+          "id": 5,
+          "title": "J.P",
+          "text": "We came to lunch and returned for a wine event. The food and service are excellent; without a doubt, we will return frequently. The owners are charming and very welcoming."
+        },
+        {
+          "id": 6,
+          "title": "Mathiws Marin",
+          "text": "Very spacious with a great view of the central valley. It is comfortable and cozy. Good security. Ideal for a couple or friends. I liked the green areas and the terrace and balcony environments."
+        },
+        {
+          "id": 7,
+          "title": "Tiffany Chavarría",
+          "text": "The Roble Escondido cabin is beautiful, we found it very comfortable and equipped with everything we needed, a very pleasant and enjoyable experience. We had a very good time."
+        },
+        {
+          "id": 8,
+          "title": "Davina S",
+          "text": "Without a doubt the best place to stay near Volcán Poas! Luxury lodging and rustic with exceptional views and the best personal in history! The rooms were very comfortable and clean, I can say that everything in this lodge is a hidden gem in the heart of Poas Costa Rica!"
+        },
+        {
+          "id": 9,
+          "title": "Flora R",
+          "text": "We fell in love with this place so picturesque and beautiful, with beautiful views and an incomparable decoration, the attention by the Host Ariana was spectacular, from start to finish. Place we will remember with much love, we hope to return soon!"
+        }
+      ],
+      "derechos" : "All rights reserved"
      
     
   },
 
     "es": {
       "type" : "es",
-      "buttonText" : "ES"
-   
-  
-    },
+      "buttonText" : "ENGLISH",
+      "subtitle" : "Vive la experiencia de la montaña",
+      "title" : "Descubre",
+      "title2" : "Magia del Poás",
+      "buttonHome" : "Reservar",
+      "explore" : "Explorar",
+      "home" : "Inicio",
+      "cabins" : "Cabañas",
+      "restaurant" : "Restaurante",
+      "testimonials" : "Testimonios",
+      "guests" : "Huespedes",
+      "fecha" : "Selecciona Fecha",
+      "subtitleS2" : "Creando momentos inolvidables",
+      "titleS2" : "Nuestra mision es crear experiencias inolvidables para ti",
+      "subtitleS3" : "Restaurante y experiencia unica",
+      "titleS3" : "Almuerzos y cenas con sabor local y frescura",
+      "textS3" : "Disfruta una propuesta cuidada, con opciones para compartir, platos bien ejecutados. Cocinamos con producto fresco, atención al detalle y un ambiente acogedor para que tu visita se sienta especial.",
+      "listS3" : [
+        {
+          "id": 1,
+          "title": "Cortes de carne premium"
+        },
+        {
+          "id": 2,
+          "title": "Variedad de platos"
+        },
+        {
+          "id": 3,
+          "title": "Pizzas Artesanales"
+        },
+        {
+          "id": 4,
+          "title": "Ambiente acogedor"
+        },
+        {
+          "id": 5,
+          "title": "Deliciosas Pastas"
+        },
+        {
+          "id": 6,
+          "title": "Pet-friendly"
+        }
+      ],
+      "subtitleS4" : "Historias de inolvidables momentos",
+      "titleS4" : "Conoce las experiencias de nuestros visitantes",
+      "listS4" : [
+        {
+          "id": 1,
+          "title": "Carol Gonzalez",
+          "text": "Un lugar increíble. La habitación espectacular, un ambiente relajante y tranquilo, el servicio excelente y muy claras las indicaciones. Serviciales, la decoración en la habitación les quedó hermosa y Justo como lo solicité. Me encantó y definitivamente regreso! Gracias 🥰"
+        },
+        {
+          "id": 2,
+          "title": "Esteban Quesada",
+          "text": "Un lugar espectacular. Estuvimos hospedados en la cabaña Deluxe Luna. Un diseño cálido, privado, lujoso y acogedor. Lleno de detalles, juegos de mesa, chimenea, todo limpio y oliendo rico. Un 100 de 100"
+        },
+        {
+          "id": 3,
+          "title": "Natalia Solano",
+          "text": "Nos encantó este lugar, es seguro, accesible en cualquier vehículo, diseño interior de ensueño y rodeado por animales de granja, senderos y un clima impresionante. Las vistas son hermosas desde la habitación y además cuentan con todo lo necesario para cocinar."
+        },
+        {
+          "id": 4,
+          "title": "Grettel Hernández",
+          "text": "100% recomendadas, sus instalaciones son impecables y ordenadas, se respira un ambiente de paz y trankilidad, un lugar 100% recomendado para espacar de la rutina y cuentan con un restaurante con excelente servicio y comida deliciosa."
+        },
+        {
+          "id": 5,
+          "title": "J.P",
+          "text": "Vinimos a almorzar y volvimos para un evento de vinos. La comida y el servicio son excelentes; sin duda, volveremos con frecuencia. Los dueños son encantadores y muy acogedores."
+        },
+        {
+          "id": 6,
+          "title": "Mathiws Marin",
+          "text": "Muy espacioso con gran vista al valle central. Es cómodo y acogedor. Buena seguridad. Ideal para ir con pareja o amigos. Me gusto mucho las areas verdes y los ambientes de terraza y balcón."
+        },
+        {
+          "id": 7,
+          "title": "Tiffany Chavarría",
+          "text": "La cabaña Roble Escondido es hermosa, la encontramos muy comfortable y equipada con todo lo necesario, una experiencia muy agradable y amena. La pasamos muy bien."
+        },
+        {
+          "id": 8,
+          "title": "Davina S",
+          "text": "Sin duda el mejor lugar para alojarse cerca de Volcán Poas! Alojamiento de lujo y rústico con vistas excepcionales y el mejor personal de la historia! Las habitaciones eran muy cómodas y limpias, puedo decir que todo este lodge es una joya escondida en el corazón de Poas Costa Rica!"
+        },
+        {
+          "id": 9,
+          "title": "Flora R",
+          "text": "Quedamos sumamente enamorados de este lugar tan pintoresco y bello, con hermosas vistas y una decoracion inigualable, la atencion por parte de la Host Ariana fue espectacular, desde inicio a fin. Lugar que recordaremos con mucho cariño, esperamos volver pronto!"
+        }
+      ],
+      "derechos" : "Todos los derechos reservados"
 
-    "fr": {
-      "type" : "fr",
-      "buttonText" : "FR"
+  
     }
   }

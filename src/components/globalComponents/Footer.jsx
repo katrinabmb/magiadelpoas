@@ -1,8 +1,11 @@
 import { Stack, Typography, useMediaQuery } from "@mui/material"
+import { useContext } from "react"
+import { LanguageContext } from "../LanguageProvider"
 
 
 const Footer = () => {
   const isMobile = useMediaQuery("(max-width: 600px)");
+  const { translation } = useContext(LanguageContext)
 
   
 
@@ -31,7 +34,7 @@ const Footer = () => {
                 
 
                 <Typography className="derechos">
-                Todos los derechos reservados
+                {translation?.derechos}
               </Typography>
 
                 </Stack>
@@ -156,7 +159,7 @@ const Footer = () => {
                 Magia del Poas
                 </Typography>
                 <Typography className="derechos">
-                Todos los derechos reservados
+                {translation?.derechos}
               </Typography>
               </Stack>
 

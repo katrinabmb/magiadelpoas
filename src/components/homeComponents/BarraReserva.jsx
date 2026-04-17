@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useMemo, useRef, useState } from "react"
+import { useContext, useMemo, useRef, useState } from "react"
 import {
   Box,
   Button,
@@ -16,6 +16,7 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import AddIcon from "@mui/icons-material/Add"
 import RemoveIcon from "@mui/icons-material/Remove"
+import { LanguageContext } from "../LanguageProvider"
 
 const formatISOToReadable = (isoDate) => {
   if (!isoDate) return ""
@@ -26,22 +27,32 @@ const formatISOToReadable = (isoDate) => {
 const clampInt = (value, min, max) => Math.min(max, Math.max(min, value))
 
 const DateField = ({ label, value, onChange }) => {
+  const { translation } = useContext(LanguageContext)
   const inputRef = useRef(null)
 
   const openPicker = () => {
     const el = inputRef.current
     if (!el) return
-    // Chrome/Edge support showPicker; fallback to focus/click.
-    if (el.showPicker) el.showPicker()
+    // Some browsers require strict user gesture; never crash if blocked.
     el.focus()
-    el.click()
+    try {
+      if (el.showPicker) el.showPicker()
+    } catch {
+      // If not allowed, the native input click/interaction will still work.
+    }
+    // Fallback for browsers without showPicker (or when blocked).
+    try {
+      el.click()
+    } catch {
+      // ignore
+    }
   }
 
   return (
     <Box className="barra-reservaField barra-reservaField--clickable" onClick={openPicker}>
       <CalendarMonthOutlinedIcon className="barra-reservaIcon" />
       <Box className="barra-reservaFieldText">
-        <Typography className="barra-reservaHint">Selecciona Fecha</Typography>
+        <Typography className="barra-reservaHint">{translation?.fecha}</Typography>
         <Typography className="barra-reservaMain">
           {value ? formatISOToReadable(value) : label}
         </Typography>
@@ -53,6 +64,16 @@ const DateField = ({ label, value, onChange }) => {
         type="date"
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        onClick={(e) => {
+          // Ensure this doesn't re-trigger the container click handler.
+          e.stopPropagation()
+          // If supported, call showPicker from the input's own user click.
+          try {
+            if (e.currentTarget.showPicker) e.currentTarget.showPicker()
+          } catch {
+            // ignore
+          }
+        }}
         aria-label={label}
       />
     </Box>
@@ -61,6 +82,8 @@ const DateField = ({ label, value, onChange }) => {
 
 const BarraReserva = () => {
   const baseUrl = import.meta.env.BASE_URL
+  const { translation } = useContext(LanguageContext)
+
   const [checkIn, setCheckIn] = useState("")
   const [checkOut, setCheckOut] = useState("")
   const [cabin, setCabin] = useState("")
@@ -87,8 +110,35 @@ const BarraReserva = () => {
   const roomsLabel = useMemo(() => cabin || "Cabaña", [cabin])
   const guestsLabel = useMemo(() => `${adults} adult, ${children} child`, [adults, children])
 
-  const handleExplore = () => {
-    // Placeholder for navigation or search action
+  const handleExplore = (e) => {
+    e?.preventDefault?.()
+    e?.stopPropagation?.()
+    const directBookBaseUrl = "https://direct-book.com/properties/cabaasdemontaamagiadelpos"
+
+    const locale = translation?.type ?? "es"
+    const queryParts = [
+      `locale=${encodeURIComponent(locale)}`,
+      `items[0][adults]=${encodeURIComponent(String(adults))}`,
+      `items[0][children]=${encodeURIComponent(String(children))}`,
+      `items[0][infants]=0`,
+      `currency=CRC`,
+    ]
+
+    if (checkIn) queryParts.push(`checkInDate=${encodeURIComponent(checkIn)}`)
+    if (checkOut) queryParts.push(`checkOutDate=${encodeURIComponent(checkOut)}`)
+    queryParts.push("trackPage=yes")
+
+    const url = `${directBookBaseUrl}?${queryParts.join("&")}`
+    window.open(url, "_blank", "noopener,noreferrer")
+
+    // Reset fields after opening booking page
+    setCheckIn("")
+    setCheckOut("")
+    setCabin("")
+    setAdults(1)
+    setChildren(0)
+    setRoomsAnchor(null)
+    setGuestsAnchor(null)
   }
 
   return (
@@ -99,19 +149,7 @@ const BarraReserva = () => {
         <DateField label="Check Out" value={checkOut} onChange={setCheckOut} />
         <Divider className="barra-reservaDivider" orientation="vertical" flexItem />
 
-        <Box
-          className="barra-reservaField barra-reservaField--clickable"
-          onClick={(e) => setRoomsAnchor(e.currentTarget)}
-          role="button"
-          tabIndex={0}
-        >
-          <BedOutlinedIcon className="barra-reservaIcon" />
-          <Box className="barra-reservaFieldText">
-            <Typography className="barra-reservaHint">Selecciona Cabaña</Typography>
-            <Typography className="barra-reservaMain">{roomsLabel}</Typography>
-          </Box>
-          <KeyboardArrowDownIcon className="barra-reservaArrow" />
-        </Box>
+       
 
         <Divider className="barra-reservaDivider" orientation="vertical" flexItem />
 
@@ -123,7 +161,7 @@ const BarraReserva = () => {
         >
           <PersonOutlineIcon className="barra-reservaIcon" />
           <Box className="barra-reservaFieldText">
-            <Typography className="barra-reservaHint">Huespedes</Typography>
+            <Typography className="barra-reservaHint">{translation?.guests}</Typography>
             <Typography className="barra-reservaMain">{guestsLabel}</Typography>
           </Box>
           <KeyboardArrowDownIcon className="barra-reservaArrow" />
@@ -135,7 +173,7 @@ const BarraReserva = () => {
             onClick={handleExplore}
             endIcon={<img src={`${baseUrl}images/arrowBTNW.svg`} alt="arrow right" className="arrowBTN" />}
           >
-            EXPLORAR
+            {translation?.explore}
           </Button>
         </Box>
       </Box>
